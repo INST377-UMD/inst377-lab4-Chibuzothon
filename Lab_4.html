@@ -5,11 +5,11 @@
     </head>
 
     <body>
-        <h2 id="header" >INST 377 - Lab 4 </h2>
+        <h2 id="header">INST 377 - Lab 4</h2>
 
         <div class="sections">
             <div id = "section1">
-                <form name = "alertme" onsubmit="namegreeting()" action="name">
+                <form name = "alertme" onsubmit="namegreeting()">
                     <label for="name"> Name:</label>
                     <input type="text" placeholder = "Name" id ="name" required>
                     <button type="submit" id="submit">Alert Me!</button>
@@ -22,10 +22,10 @@
 
             
             <div id="section3">
-                <form name = "validate" onclick="validatetext()" action="test">
-                    <label for="t"> Text Tester:</label>
+                <form name = "validate" >
+                    <label for="test"> Text Tester:</label>
                     <input type="text" placeholder = "Test" id ="test">
-                    <button type="button">Validate Text</button>
+                    <button type="button" onclick="validatetext()">Validate Text</button>
                 </form>
             </div>
 
@@ -44,16 +44,18 @@
 
 
         <script type="text/javascript">
+            document.body.style.backgroundColor="rgb(20, 224, 224"
             function changecolor() {
                if (document.body.style.backgroundColor=="rgb(20, 224, 224)")
-                {(document.body.style.backgroundColor="rgb(73, 206, 84)")
+                {document.body.style.backgroundColor="rgb(73, 206, 84)";
                     
                 }
-                else{(document.body.style.backgroundColor="rgb(20, 224, 224)")}
+                else{document.body.style.backgroundColor="rgb(20, 224, 224)";}
                 return false;
+                
 
             }
-
+            
              function namegreeting(){
                 if (document.alertme.submit);{
                     let inputname = document.getElementById("name");
@@ -65,44 +67,23 @@
 
              function validatetext(){
                 var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
-                if (validation.test(document.validate.test.value)){
-            
-                    let valinput = document.validate.test.value;
-                    let value = valinput;
+                if (validation.test(document.getElementById("test").value)){
                     alert("There is a Special Charcter");
-                    
+                    return false;
+
                 }
+                return true;
              }
 
              function headeradd(){
                 let head = document.getElementById("header");
-                    head.innerHTML += "addtext";
+                    head.innerHTML = "INST377 - Lab 4 addtext";
                     return false;
              }
 
              
         </script> 
     </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </html>
